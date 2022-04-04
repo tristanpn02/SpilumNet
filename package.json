@@ -1,16 +1,14 @@
 {
-  "name": "spilum-server",
+  "name": "spilum-full",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build"
   },
   "author": "Apher",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.3"
-  },
   "engines": {
     "node": "16.14.0"
   }
