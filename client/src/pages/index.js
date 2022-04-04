@@ -14,6 +14,10 @@ const Home = () => {
           and by all means, feel free to use it.<br/><br/>
           
           <b>I would appreciate it that credit is given where it's due.</b>
+        </p><br/>
+        <p id="odie-text">
+          I may not be talented enough as my boyfriend to create adorable drawings<br/>
+          So the least I could do is <a id="odie-link" href="/cutie">make this for him =3</a>
         </p>
     </div>
   );

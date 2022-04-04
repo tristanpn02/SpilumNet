@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Home from './pages';
 import ApiTest from './pages/apitest';
 import Tools from './pages/tools';
+import Odie from './pages/odie';
 
 export default class App extends React.Component {
   render() {
@@ -21,6 +22,7 @@ export default class App extends React.Component {
             <Route path='/home' exact element={<Home/>}/>
             <Route path='/tools' element={<Tools/>}/>
             <Route path='/apitest' element={<ApiTest/>}/>
+            <Route path='/cutie' element={<Odie/>}/>
           </Routes>
         </div>
         <Footer/>
