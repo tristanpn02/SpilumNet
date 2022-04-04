@@ -2,10 +2,13 @@
     border-style: double none none none;
     border-color: white;
     padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
-h2 {
-    margin-block: 0;
-    padding-block: 10px;
-    display: inline-block;
+.footer img {
+    width: 38px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }

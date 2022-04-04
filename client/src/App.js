@@ -7,7 +7,6 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 
 import Home from './pages';
-import About from './pages/about';
 import ApiTest from './pages/apitest';
 import Tools from './pages/tools';
 
@@ -20,7 +19,6 @@ export default class App extends React.Component {
           <Routes>
             <Route path="/" element={<Navigate to="/home"/>}/>
             <Route path='/home' exact element={<Home/>}/>
-            <Route path='/about' element={<About/>}/>
             <Route path='/tools' element={<Tools/>}/>
             <Route path='/apitest' element={<ApiTest/>}/>
           </Routes>

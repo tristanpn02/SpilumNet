@@ -33,6 +33,7 @@ img {
 .Main {
   padding: 0 10px;
   flex: 1;
+  overflow: auto;
 }
 
 h2 {
