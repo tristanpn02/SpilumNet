@@ -1,26 +1,22 @@
-body {
+.odie {
     background-color: cadetblue;
     text-align: center;
 }
 
-a:hover {
+.odie a:hover {
     background-color: gold;
 }
 
-.dropdown:hover h2 {
-    background-color: gold;
-}
-
-h1 {
+.odie h1 {
     font-size: 80px;
     color: hotpink;
     text-shadow: 2px 2px 1px black;
 }
 
-h3 span {
+.odie h3 span {
     color: gold;
 }
 
-img  {
+.odie img  {
     max-width: 750px;
 }

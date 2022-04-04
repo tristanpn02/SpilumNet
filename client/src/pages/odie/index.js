@@ -2,8 +2,9 @@ import React from 'react';
 import "./styles.css";
   
 const Odie = () => {
+    
   return (
-    <div>
+    <div className="odie">
         <h1>I LOVE YOU!</h1>
         <h3>
             You have no idea how much you mean to me.<br/>

@@ -1,3 +1,8 @@
+.tools {
+    width: 90%;
+    margin: auto;
+}
+
 .toolbox {
     display: flex;
     justify-content: space-around;

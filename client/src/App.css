@@ -31,9 +31,13 @@ img {
 }
 
 .Main {
-  padding: 0 10px;
   flex: 1;
   overflow: auto;
+}
+
+.home {
+  margin: auto;
+  width: 90%;
 }
 
 #odie-text {
