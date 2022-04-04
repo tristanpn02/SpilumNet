@@ -1,0 +1,11 @@
+.footer {
+    border-style: double none none none;
+    border-color: white;
+    padding: 0 10px;
+}
+
+h2 {
+    margin-block: 0;
+    padding-block: 10px;
+    display: inline-block;
+}

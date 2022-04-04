@@ -1,0 +1,11 @@
+.announce {
+    background-color: green;
+    text-align: center;
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+h1 {
+    margin-block: 0;
+}
