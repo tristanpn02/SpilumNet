@@ -43,6 +43,10 @@ h2 {
   transition: background-color 0.1s linear;
 }
 
+h1, p {
+  margin-block: 0;
+}
+
 a {
   color: unset;
   text-decoration: unset;

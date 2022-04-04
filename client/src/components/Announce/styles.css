@@ -6,6 +6,6 @@
     margin: 10px auto;
 }
 
-h1 {
-    margin-block: 0;
+.announce p {
+    margin: -5px;
 }
