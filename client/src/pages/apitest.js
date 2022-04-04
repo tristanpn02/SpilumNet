@@ -1,6 +1,6 @@
 import React from "react";
 
-const Housing = () => {
+const ApiTest = () => {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
@@ -15,4 +15,4 @@ const Housing = () => {
   );
 };
   
-export default Housing;
+export default ApiTest;

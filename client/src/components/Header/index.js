@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import './styles.css';
 
 const Header = () => {
     return (
@@ -12,7 +12,8 @@ const Header = () => {
                 <div className='dropdown-content'>
                     <a href="/home">Home</a>
                     <a href="/about">About</a>
-                    <a href="/housing">Housing</a>
+                    <a href="/tools">Tools</a>
+                    <a href="/apitest">ApiTest</a>
                 </div>
             </div>
         </div>

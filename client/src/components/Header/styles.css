@@ -6,17 +6,12 @@
     justify-content: space-between;
 }
 
-h2 {
-    margin-block: 0;
-    padding-block: 10px;
-    display: inline-block;
-}
-
 .dropdown {
     position: relative;
     display: inline-block;
     font-weight: normal;
     direction: rtl;
+    transition: background-color 0.1s linear;
 }
 
 .dropdown:hover h2 {
@@ -29,7 +24,7 @@ h2 {
     position: absolute;
     z-index: 1;
     background-color: darkslategray;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .dropdown-content a {
@@ -40,14 +35,4 @@ h2 {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-a {
-    color: unset;
-    text-decoration: unset;
-    text-align: left;
-}
-
-a:hover {
-    background-color: green;
 }

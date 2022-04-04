@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-import Announce from '../components/Announce/Announce';
+import React from 'react';
+import Announce from '../components/Announce';
   
 const Home = () => {
-    useEffect(() => {document.title = "Home"})
   return (
     <div>
-        <Announce/>
+        <Announce>WEBSITE IS UNDER CONSTRUCTION</Announce>
         <h1>Welcome to Spilum.Net</h1>
     </div>
   );

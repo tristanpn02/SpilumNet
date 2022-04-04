@@ -3,18 +3,15 @@ import {BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-do
 
 import './App.css';
 
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 import Home from './pages';
 import About from './pages/about';
-import Housing from './pages/housing';
+import ApiTest from './pages/apitest';
+import Tools from './pages/tools';
 
 export default class App extends React.Component {
-  componentDidMount() {
-    document.title = "Spilum.net | Home"
-  }
-
   render() {
     return (
       <Router>
@@ -24,7 +21,8 @@ export default class App extends React.Component {
             <Route path="/" element={<Navigate to="/home"/>}/>
             <Route path='/home' exact element={<Home/>}/>
             <Route path='/about' element={<About/>}/>
-            <Route path='/housing' element={<Housing/>}/>
+            <Route path='/tools' element={<Tools/>}/>
+            <Route path='/apitest' element={<ApiTest/>}/>
           </Routes>
         </div>
         <Footer/>
