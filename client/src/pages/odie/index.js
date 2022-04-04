@@ -7,7 +7,7 @@ const Odie = () => {
         <h1>I LOVE YOU!</h1>
         <h3>
             You have no idea how much you mean to me.<br/>
-            Even though I may not express it well enough, every time I am with you, you make me smile.
+            Even though I may not express it well enough but every time I am with you, <span>you make me smile</span>.
         </h3>
         <img src='https://i.ibb.co/4F46m5t/coot-foxo-andnot-coot-puppo.png'/>
         <div className='gallery'>
