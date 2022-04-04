@@ -16,7 +16,7 @@ const Tools = () => {
             <Tool
                 title="TG Profile Changer"
                 src="https://github.com/tristanpn02/TG-Profile-Changer"
-                image="">
+                image="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpngimg.com%2Fuploads%2Ftelegram%2Ftelegram_PNG35.png">
                 Changes your Telegram user profile picture randomly every single day.<br/><br/>
                 Requires Python3.x to run.
                 </Tool>

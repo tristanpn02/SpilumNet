@@ -10,9 +10,9 @@ const Header = () => {
             <div className='dropdown'>
                 <h2 className='location'>{window.location.pathname === "/" ? "/home" : window.location.pathname}</h2>
                 <div className='dropdown-content'>
-                    <a href="/home">Home</a>
-                    <a href="/tools">Tools</a>
-                    <a href="/apitest">ApiTest</a>
+                    <a href="/home">home</a>
+                    <a href="/tools">tools</a>
+                    <a href="/apitest">apitest</a>
                 </div>
             </div>
         </div>
