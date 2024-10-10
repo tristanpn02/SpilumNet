@@ -1,3 +1,5 @@
+import './styles.css';
+
 type AnnounceBannerProps = {
     children: React.ReactNode;
 }
