@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <div className="footer">
             <a href="/">
-                <h2>&copy Spilum.Net {today.getFullYear()}</h2>
+                <h2>&copy; Spilum.Net {today.getFullYear()}</h2>
             </a>
             <a href="https://github.com/tristanpn02/SpilumNet">
                 <img src={ghIcon} alt="This Website's Github Repository" />
@@ -17,3 +17,5 @@ const Footer = () => {
         </div>
     )
 }
+
+export default Footer;
