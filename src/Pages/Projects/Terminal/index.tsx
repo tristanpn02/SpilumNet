@@ -1,29 +1,38 @@
 import { useState } from 'react';
 import './styles.css';
 
-const Terminal = () => {
-    const [input, setInput] = useState('');
-    const [output, setOutput] = useState([]);
+type CommandResponse = string | (() => void);
 
-    const commands = {
+const Terminal = () => {
+    const [input, setInput] = useState<string>('');
+    const [output, setOutput] = useState<string[]>([]);
+
+    const commands: Record<string, CommandResponse> = {
         help: 'Available commands: help, clear, about, exit',
-        about: 'This is a terminal application made in react',
+        about: 'This is a terminal application made in React',
         clear: () => setOutput([]),
-        exit: () => setOutput([...output, 'Exiting...']),
+        exit: () => setOutput((prev) => [...prev, 'Exiting...']),
     };
 
-    const handleInput = (e) => {
+    const handleInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             const cmd = input.trim();
             if (commands[cmd]) {
                 const response = typeof commands[cmd] === 'function' ? commands[cmd]() : commands[cmd];
-                setOutput([...output, `> ${cmd}`, response]);
+                
+                // Only add the response to output if it's a string
+                if (typeof response === 'string') {
+                    setOutput((prev) => [...prev, `> ${cmd}`, response]);
+                } else {
+                    setOutput((prev) => [...prev, `> ${cmd}`]);
+                }
             } else {
-                setOutput([...output, `> ${cmd}`, 'Command not found. Type "help" for a list of commands.']);
+                setOutput((prev) => [...prev, `> ${cmd}`, 'Command not found. Type "help" for a list of commands.']);
             }
             setInput('');
         }
     };
+    
 
     return (
         <div className="terminal">
@@ -34,14 +43,16 @@ const Terminal = () => {
             </div>
             <div className="input">
                 <span>&gt; </span>
-                <input type="text"
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        onKeyDown={handleInput}
-                        autoFocus />
+                <input 
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={handleInput}
+                    autoFocus 
+                />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Terminal;
