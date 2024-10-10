@@ -1,26 +1,25 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import './styles.css';
+import spilumLogo from './Spilum-Logo.svg';
+
 
 const Header = ({ routes }) => {
-    const location = useLocation();
 
     return (
         <div className="header">
             <Link to="/">
-                <h2>Spilum.Net</h2>
+                <img className='logo' src={spilumLogo} height="60px" alt="" />
             </Link>
-            <div className="dropdown">
-                <h2 className="location">
-                    {location.pathname === "/" ? "/home" : location.pathname}
-                </h2>
-                <div className="dropdown-content">
+            <nav>
+                <ul>
                     {routes.map((route, index) => (
-                        <Link key={index} to={route.path}>
-                            {route.title.toLowerCase()}
-                        </Link>
+                        <li>
+                            <Link key={index} to={route.path}>{route.title}</Link>
+                        </li>
                     ))}
-                </div>
-            </div>
+                </ul>
+            </nav>
         </div>
     );
 }
