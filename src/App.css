@@ -43,11 +43,6 @@ img {
   overflow: auto;
 }
 
-.home {
-  margin: auto;
-  width: 90%;
-}
-
 h1, h2, p {
   margin-block: 0;
 }

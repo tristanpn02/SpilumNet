@@ -1,5 +1,7 @@
 import AnnounceBanner from "../../Components/AnnounceBanner";
 
+import './styles.css';
+
 const Home = () => {
     return (
         <div className="home">
