@@ -1,8 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 
 import './styles.css';
-import spilumLogo from './Spilum-Logo.svg';
-
 
 const Header = ({ routes }) => {
 
