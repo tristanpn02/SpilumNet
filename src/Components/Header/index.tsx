@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import './styles.css';
 import spilumLogo from './Spilum-Logo.svg';
@@ -15,7 +15,7 @@ const Header = ({ routes }) => {
                 <ul>
                     {routes.map((route, index) => (
                         <li>
-                            <Link key={index} to={route.path}>{route.title}</Link>
+                            <NavLink activeClassName="active" key={index} to={route.path}>{route.title}</NavLink>
                         </li>
                     ))}
                 </ul>
