@@ -1,0 +1,76 @@
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+img {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#root {
+  display: flex;
+  flex-flow: column;
+}
+
+.Main {
+  flex: 1;
+  overflow: auto;
+}
+
+.home {
+  margin: auto;
+  width: 90%;
+}
+
+#odie-text {
+  color: cadetblue;
+}
+
+#odie-link {
+  color:hotpink;
+}
+
+#odie-link:hover {
+  color:gold;
+  background-color: unset;
+}
+
+h2 {
+  margin-block: 0;
+  padding-block: 10px;
+  display: inline-block;
+  transition: background-color 0.1s linear;
+}
+
+h1, p {
+  margin-block: 0;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+  text-align: left;
+  transition: background-color 0.1s linear;
+}
+
+a:hover {
+  background-color: green;
+}
