@@ -2,7 +2,16 @@ import { Link, NavLink } from 'react-router-dom';
 
 import './styles.css';
 
-const Header = ({ routes }) => {
+interface Route {
+    path: string;
+    title: string;
+}
+
+interface HeaderProps {
+    routes: Route[];
+}
+
+const Header: React.FC<HeaderProps> = ({ routes }) => {
 
     return (
         <div className="header">
@@ -13,7 +22,11 @@ const Header = ({ routes }) => {
                 <ul>
                     {routes.map((route, index) => (
                         <li>
-                            <NavLink key={index} activeClassName="active" to={route.path}>{route.title}</NavLink>
+                            <NavLink 
+                                key={index}
+                                className={({ isActive }) => (isActive ? 'active' : '')}
+                                to={route.path}>{route.title}
+                            </NavLink>
                         </li>
                     ))}
                 </ul>
