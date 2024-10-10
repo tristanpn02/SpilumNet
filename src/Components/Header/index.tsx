@@ -15,7 +15,7 @@ const Header = ({ routes }) => {
                 <ul>
                     {routes.map((route, index) => (
                         <li>
-                            <NavLink activeClassName="active" key={index} to={route.path}>{route.title}</NavLink>
+                            <NavLink key={index} activeClassName="active" to={route.path}>{route.title}</NavLink>
                         </li>
                     ))}
                 </ul>
