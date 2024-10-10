@@ -1,0 +1,10 @@
+.announce {
+    background-color: green;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.announce p {
+    margin: -5px;
+}
