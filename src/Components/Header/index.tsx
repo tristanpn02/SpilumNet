@@ -1,21 +1,28 @@
+import { Link, useLocation } from 'react-router-dom';
 import './styles.css';
 
-const Header = () => {
+const Header = ({ routes }) => {
+    const location = useLocation();
+
     return (
         <div className="header">
-            <a href="/">
+            <Link to="/">
                 <h2>Spilum.Net</h2>
-            </a>
+            </Link>
             <div className="dropdown">
                 <h2 className="location">
-                    {window.location.pathname === "/" ? "/home" : window.location.pathname}
+                    {location.pathname === "/" ? "/home" : location.pathname}
                 </h2>
                 <div className="dropdown-content">
-                    <a href="/home">home</a>
+                    {routes.map((route, index) => (
+                        <Link key={index} to={route.path}>
+                            {route.title.toLowerCase()}
+                        </Link>
+                    ))}
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Header;
