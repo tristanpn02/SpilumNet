@@ -14,7 +14,9 @@ html, body, #root {
 
 @font-face {
   font-family: 'PerfectDOS';
-  src: url('./fonts/PerfectDOSVGA437Win.ttf') format('truetype');
+  src: url('./Resources/fonts/PerfectDOSVGA437Win.ttf') format('truetype'),
+        url('./Resources/fonts/PerfectDOSVGA437Win.woff') format('woff'),
+        url('./Resources/fonts/PerfectDOSVGA437Win.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
