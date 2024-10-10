@@ -9,7 +9,7 @@ const Header = ({ routes }) => {
     return (
         <div className="header">
             <Link to="/">
-                <img className='logo' src={spilumLogo} height="60px" alt="" />
+                <h1 className='title'>Spilum<span className='titleSecond'>.Net</span></h1>
             </Link>
             <nav>
                 <ul>
