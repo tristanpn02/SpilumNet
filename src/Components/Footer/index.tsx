@@ -1,6 +1,6 @@
 import './styles.css';
 
-import ghIcon from './github-mark.svg';
+import ghIcon from '../../Resources/images/github-mark.svg';
 
 const Footer = () => {
     const today = new Date();

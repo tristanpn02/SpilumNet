@@ -12,16 +12,25 @@ html, body, #root {
   height: 100%;
 }
 
+@font-face {
+  font-family: 'PerfectDOS';
+  src: url('./Resources/fonts/PerfectDOSVGA437Win.ttf') format('truetype'),
+        url('./Resources/fonts/PerfectDOSVGA437Win.woff') format('woff'),
+        url('./Resources/fonts/PerfectDOSVGA437Win.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   display: block !important;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'PerfectDOS', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-background);
   color: var(--color-text);
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -54,7 +63,7 @@ h2 {
 }
 
 a {
-  color: inherit;
+  color: var(--color-link) !important;
   text-decoration: none;
   text-align: left;
   transition: background-color 0.1s linear;
@@ -62,4 +71,5 @@ a {
 
 a:hover {
   background-color: var(--color-hover-background);
+  color: var(--color-hover-link) !important;
 }

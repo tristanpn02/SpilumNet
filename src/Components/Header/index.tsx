@@ -1,15 +1,13 @@
 import { Link, NavLink } from 'react-router-dom';
 
 import './styles.css';
-import spilumLogo from './Spilum-Logo.svg';
-
 
 const Header = ({ routes }) => {
 
     return (
         <div className="header">
             <Link to="/">
-                <img className='logo' src={spilumLogo} height="60px" alt="" />
+                <h1 className='title'>Spilum<span className='titleSecond'>.Net</span></h1>
             </Link>
             <nav>
                 <ul>
