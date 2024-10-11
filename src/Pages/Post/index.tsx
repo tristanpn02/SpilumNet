@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { fetchPost, fetchUser } from "../../api/jsonPlaceholder";
 
+import './styles.css';
+
 interface User {
     id: number;
     name: string;
