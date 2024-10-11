@@ -2,12 +2,11 @@ import axios from "axios";
 
 const API_URL = 'https://jsonplaceholder.typicode.com';
 
-export const fetchPost = async (id: number) => {
-    const response = await axios.get(`${API_URL}/posts/${id}`);
-    return response.data;
-}
-
-export const fetchPosts = async () => {
+export const fetchPost = async (id?: number) => {
+    if (id) {
+        const response = await axios.get(`${API_URL}/posts/${id}`);
+        return response.data;
+    }
     const response = await axios.get(`${API_URL}/posts`);
     return response.data;
 }

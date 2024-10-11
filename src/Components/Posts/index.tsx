@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-import { fetchPosts } from '../../api/jsonPlaceholder';
+import { fetchPost } from '../../api/jsonPlaceholder';
 
 import './styles.css';
 
@@ -18,7 +18,7 @@ const Posts = () => {
     useEffect(() => {
         const getPosts = async () => {
             try {
-                const data = await fetchPosts();
+                const data = await fetchPost();
                 setPosts(data);
             } catch (error) {
                 setError('Failed to fetch posts');
