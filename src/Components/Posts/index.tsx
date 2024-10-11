@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import { Link } from "react-router-dom";
 import { fetchPosts } from '../../api/jsonPlaceholder';
 
 import './styles.css';
@@ -7,7 +7,7 @@ import './styles.css';
 interface Post {
     id: number;
     title: string;
-    body: string;
+    userId: number;
 }
 
 const Posts = () => {
@@ -39,8 +39,10 @@ const Posts = () => {
             <ul>
                 {posts.map(post => (
                     <li key={post.id}>
-                        <h3>{post.title}</h3>
-                        <p>{post.body}</p>
+                        <Link to={`/post/${post.id}`}>
+                            <h3>{post.title}</h3>
+                            <p>{post.userId}</p> {/* Link to user */}
+                        </Link>
                     </li>
                 ))}
             </ul>
