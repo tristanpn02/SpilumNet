@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchPost, fetchUser } from '../../api/jsonPlaceholder';
 
@@ -17,41 +17,37 @@ interface Post {
 
 const Posts = () => {
     const [posts, setPosts] = useState<Post[]>([]);
-    const [users, setUsers] = useState<{ [key: number]: User}>({});
+    const [users, setUsers] = useState<{ [key: number]: User }>({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
-    const getUser = async (userId: number) => {
-        if (!users[userId]) {
-            try {
-                const data = await fetchUser(userId);
-                setUsers(prevUsers => ({
-                    ...prevUsers,
-                    [userId]: data
-                }));
-            } catch (error) {
-                setError('Failed to fetch user');
-            }
-        }
-    }
-
+    // Fetch posts and batch fetch user details
     useEffect(() => {
-        const getPosts = async () => {
+        const getPostsAndUsers = async () => {
             try {
-                const data = await fetchPost();
-                setPosts(data);
+                const postsData = await fetchPost();
+                setPosts(postsData);
 
-                for (const post of data) {
-                    await getUser(post.userId);
-                }
+                const userIds = Array.from(new Set(postsData.map(post => post.userId)));
+                
+                // Fetch all users in parallel
+                const usersData = await Promise.all(userIds.map(id => fetchUser(id)));
+                
+                // Convert array of users to an object with userId as keys
+                const usersMap = usersData.reduce((acc, user) => {
+                    acc[user.id] = user;
+                    return acc;
+                }, {} as { [key: number]: User });
+
+                setUsers(usersMap);
             } catch (error) {
-                setError('Failed to fetch posts');
+                setError('Failed to fetch posts or users');
             } finally {
                 setLoading(false);
             }
         };
 
-        getPosts();
+        getPostsAndUsers();
     }, []);
 
     if (loading) return <p>Loading...</p>;
@@ -65,18 +61,20 @@ const Posts = () => {
                     <li key={post.id}>
                         <Link to={`/post/${post.id}`}>
                             <h3>{post.title}</h3>
-                            <p>
-                                {users[post.userId]
-                                    ? `By ${users[post.userId].name}`
-                                    : `Loading user...`
-                                }
-                            </p>
+                        
+                        {users[post.userId] ? (
+                            <Link to={`/user/${post.userId}`}>
+                                By {users[post.userId].name}
+                            </Link>
+                        ) : (
+                            <p>Loading user...</p>
+                        )}
                         </Link>
                     </li>
                 ))}
             </ul>
         </div>
-    )
-}
+    );
+};
 
 export default Posts;
