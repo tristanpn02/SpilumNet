@@ -2,12 +2,16 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Projects from './Pages/Projects';
 import Terminal from './Pages/Projects/Terminal';
+import Post from './Pages/Post';
+import Posts from './Components/Posts';
 
 const routesConfig = [
-  { path: '/home', title: 'Home', component: <Home /> },
-  { path: '/about', title: 'About', component: <About /> },
-  { path: '/projects', title: 'Projects', component: <Projects />},
-  { path: '/projects/terminal', title: 'Terminal', component: <Terminal />}
+  { path: '/home', title: 'Home', component: <Home />, navbar: true },
+  { path: '/about', title: 'About', component: <About />, navbar: true },
+  { path: '/projects', title: 'Projects', component: <Projects />, navbar: true },
+  { path: '/projects/terminal', title: 'Terminal', component: <Terminal />, navbar: false },
+  { path: '/posts', title: 'Posts', component: <Posts />, navbar: false },
+  { path: '/post/:id', title: 'Post', component: <Post />, navbar: false }
 ];
 
 export default routesConfig;

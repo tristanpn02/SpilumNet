@@ -5,6 +5,7 @@ import './styles.css';
 interface Route {
     path: string;
     title: string;
+    navbar: boolean;
 }
 
 interface HeaderProps {
@@ -20,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ routes }) => {
             </Link>
             <nav>
                 <ul>
-                    {routes.map((route, index) => (
+                    {routes.map((route, index) => ( !route.navbar ? '' :
                         <li>
                             <NavLink 
                                 key={index}
