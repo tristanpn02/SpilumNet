@@ -7,12 +7,12 @@ export const fetchPost = async (id?: number) => {
     return response.data;
 }
 
-export const fetchUsers = async (id?: number) => {
+export const fetchUser = async (id?: number) => {
     const response = await axios.get(`${API_URL}/users/` + (id ? id : ''));
     return response.data;
 }
 
-export const fetchComments = async (id?: number) => {
+export const fetchComment = async (id?: number) => {
     const response = await axios.get(`${API_URL}/comments/` + (id ? id : ''));
     return response.data;
 }
