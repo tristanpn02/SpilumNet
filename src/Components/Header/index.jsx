@@ -2,17 +2,8 @@ import { Link, NavLink } from 'react-router-dom';
 
 import './styles.css';
 
-interface Route {
-    path: string;
-    title: string;
-    navbar: boolean;
-}
 
-interface HeaderProps {
-    routes: Route[];
-}
-
-const Header: React.FC<HeaderProps> = ({ routes }) => {
+const Header = ({ routes }) => {
 
     return (
         <div className="header">

@@ -4,15 +4,8 @@ import { useParams } from "react-router-dom";
 
 import './styles.css';
 
-interface User {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-}
-
 const User = () => {
-    const { id } = useParams<{ id: string }>();
+    const { id } = useParams();
     const [user, setUser] = useState<User | null>(null);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);

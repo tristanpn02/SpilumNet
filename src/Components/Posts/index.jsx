@@ -1,23 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchPost, fetchUser } from '../../api/jsonPlaceholder';
-
 import './styles.css';
 
-interface User {
-    id: number;
-    name: string;
-}
-
-interface Post {
-    id: number;
-    title: string;
-    userId: number;
-}
-
 const Posts = () => {
-    const [posts, setPosts] = useState<Post[]>([]);
-    const [users, setUsers] = useState<{ [key: number]: User }>({});
+    const [posts, setPosts] = useState([]);
+    const [users, setUsers] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
@@ -37,7 +25,7 @@ const Posts = () => {
                 const usersMap = usersData.reduce((acc, user) => {
                     acc[user.id] = user;
                     return acc;
-                }, {} as { [key: number]: User });
+                }, {});
 
                 setUsers(usersMap);
             } catch (error) {
@@ -58,20 +46,18 @@ const Posts = () => {
             <h2>Posts</h2>
             <ul>
                 {posts.map(post => (
-                    <Link to={`/post/${post.id}`}>
-                        <li key={post.id}>
-                            
-                                <h3>{post.title}</h3>
-                            
-                            {users[post.userId] ? (
-                                <Link to={`/user/${post.userId}`}>
-                                    By {users[post.userId].name}
-                                </Link>
-                            ) : (
-                                <p>Loading user...</p>
-                            )}
-                        </li>
-                    </Link>
+                    <li key={post.id}>
+                        <Link to={`/post/${post.id}`}>
+                            <h3>{post.title}</h3>
+                        </Link>
+                        {users[post.userId] ? (
+                            <Link to={`/user/${post.userId}`}>
+                                By {users[post.userId].name}
+                            </Link>
+                        ) : (
+                            <p>Loading user...</p>
+                        )}
+                    </li>
                 ))}
             </ul>
         </div>

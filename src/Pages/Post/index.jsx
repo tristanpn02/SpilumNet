@@ -4,26 +4,14 @@ import { fetchPost, fetchUser } from "../../api/jsonPlaceholder";
 
 import './styles.css';
 
-interface User {
-    id: number;
-    name: string;
-}
-
-interface Post {
-    id: number;
-    title: string;
-    body: string;
-    userId: number;
-}
-
 const Post = () => {
-    const { id } = useParams<{ id: string }>();
+    const { id } = useParams();
     const [post, setPost] = useState<Post | null>(null);
     const [user, setUser] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
-    const getUser = async (userId: number) => {
+    const getUser = async (userId) => {
         if (!user[userId]) {
             try {
                 const data = await fetchUser(userId);

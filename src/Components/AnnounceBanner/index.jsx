@@ -1,10 +1,7 @@
 import './styles.css';
 
-type AnnounceBannerProps = {
-    children: React.ReactNode;
-}
 
-const AnnounceBanner: React.FC<AnnounceBannerProps> = (props) => {
+const AnnounceBanner = (props) => {
     return (
         <div className="announce">
             <p>ANNOUNCEMENT</p>

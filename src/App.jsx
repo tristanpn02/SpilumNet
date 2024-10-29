@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 
 import routesConfig from './routesConfig';
+import React from 'react';
 
 function App() {
   return (
